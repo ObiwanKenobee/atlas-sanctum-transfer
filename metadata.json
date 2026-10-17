@@ -1,0 +1,6 @@
+{
+  "name": "Atlas Sanctum",
+  "description": "Atlas Sanctum: Decision-intelligence platform for the Great Wealth Transfer, generational stewardship, and regenerative capital allocation in Africa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
