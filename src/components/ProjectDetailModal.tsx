@@ -1,20 +1,44 @@
-import React from 'react';
-import { Opportunity } from '../types';
+import React, { useState } from 'react';
+import { Opportunity, ThematicImpactCategory, RegenerativeAnnotation, UserRole } from '../types';
 
 interface ProjectDetailModalProps {
   opportunity: Opportunity | null;
   onClose: () => void;
   onAddToBrief?: (opportunity: Opportunity) => void;
   isShortlisted?: boolean;
+  onAddAnnotation?: (opportunityId: string, annotation: Omit<RegenerativeAnnotation, 'id' | 'timestamp'>) => void;
 }
 
 export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
   opportunity,
   onClose,
   onAddToBrief,
-  isShortlisted = false
+  isShortlisted = false,
+  onAddAnnotation
 }) => {
+  const [isAddingAnnotation, setIsAddingAnnotation] = useState(false);
+  const [newCategory, setNewCategory] = useState<ThematicImpactCategory>('Soil Restoration');
+  const [newEvidenceTier, setNewEvidenceTier] = useState<RegenerativeAnnotation['evidenceTier']>('Direct Field Observation');
+  const [newAuthorName, setNewAuthorName] = useState('Dr. Wanjiku Mwangi');
+  const [newAuthorRole, setNewAuthorRole] = useState<UserRole>('Field Auditor');
+  const [newNote, setNewNote] = useState('');
+
   if (!opportunity) return null;
+
+  const handleAnnotationSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newNote.trim() || !onAddAnnotation) return;
+    onAddAnnotation(opportunity.id, {
+      opportunityId: opportunity.id,
+      category: newCategory,
+      authorName: newAuthorName.trim(),
+      authorRole: newAuthorRole,
+      evidenceTier: newEvidenceTier,
+      note: newNote.trim()
+    });
+    setNewNote('');
+    setIsAddingAnnotation(false);
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#0B241A]/70 backdrop-blur-sm overflow-y-auto">
@@ -245,6 +269,179 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             </p>
           </div>
 
+          {/* Thematic Regenerative Annotations Section */}
+          <div className="p-5 bg-white border border-[#E8E4DC] rounded-xl space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-[#E8E4DC]">
+              <div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[#0B241A]">
+                    Thematic Regenerative Annotations
+                  </span>
+                  <span className="px-2 py-0.5 bg-[#2C5E4B]/10 text-[#2C5E4B] text-[10px] font-mono rounded font-semibold">
+                    {(opportunity.annotations || []).length} Attached
+                  </span>
+                </div>
+                <p className="text-xs text-[#78716C] mt-0.5">
+                  Qualitative field observations, baseline findings, and community testimony tagged by thematic impact category.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setIsAddingAnnotation(!isAddingAnnotation)}
+                className="px-3 py-1.5 bg-[#0B241A] text-white text-xs font-medium rounded hover:bg-[#13382C] transition-colors cursor-pointer shrink-0"
+              >
+                {isAddingAnnotation ? 'Cancel Annotation' : '+ Attach New Annotation'}
+              </button>
+            </div>
+
+            {/* Interactive New Annotation Form */}
+            {isAddingAnnotation && (
+              <form onSubmit={handleAnnotationSubmit} className="p-4 bg-[#F4F1EA] border border-[#E8E4DC] rounded-lg space-y-4">
+                <div className="text-xs font-semibold uppercase tracking-wider text-[#0B241A]">
+                  New Qualitative Regenerative Annotation
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                  <div>
+                    <label className="block text-[11px] font-mono uppercase text-[#78716C] mb-1">
+                      Thematic Impact Category *
+                    </label>
+                    <select
+                      value={newCategory}
+                      onChange={(e) => setNewCategory(e.target.value as ThematicImpactCategory)}
+                      className="w-full px-3 py-2 bg-white border border-[#E8E4DC] rounded text-[#0B241A] font-medium focus:outline-none focus:border-[#0B241A]"
+                    >
+                      <option value="Soil Restoration">Soil Restoration</option>
+                      <option value="Community Sovereignty">Community Sovereignty</option>
+                      <option value="Aquifer & Watershed Protection">Aquifer & Watershed Protection</option>
+                      <option value="Youth Employment & Continuity">Youth Employment & Continuity</option>
+                      <option value="Clean Energy & Decentralization">Clean Energy & Decentralization</option>
+                      <option value="Biodiversity Corridors">Biodiversity Corridors</option>
+                      <option value="Circular Waste Biomass">Circular Waste Biomass</option>
+                      <option value="Gender Equity & Land Agency">Gender Equity & Land Agency</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-mono uppercase text-[#78716C] mb-1">
+                      Evidence Provenance Tier *
+                    </label>
+                    <select
+                      value={newEvidenceTier}
+                      onChange={(e) => setNewEvidenceTier(e.target.value as any)}
+                      className="w-full px-3 py-2 bg-white border border-[#E8E4DC] rounded text-[#0B241A] font-medium focus:outline-none focus:border-[#0B241A]"
+                    >
+                      <option value="Direct Field Observation">Direct Field Observation</option>
+                      <option value="Audited Baseline Finding">Audited Baseline Finding</option>
+                      <option value="Community Testimony">Community Testimony</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-mono uppercase text-[#78716C] mb-1">
+                      Author Name *
+                    </label>
+                    <input
+                      type="text"
+                      value={newAuthorName}
+                      onChange={(e) => setNewAuthorName(e.target.value)}
+                      placeholder="e.g. Dr. Wanjiku Mwangi or Council Principal"
+                      className="w-full px-3 py-2 bg-white border border-[#E8E4DC] rounded text-[#0B241A] font-medium focus:outline-none focus:border-[#0B241A]"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-[11px] font-mono uppercase text-[#78716C] mb-1">
+                      Author Role *
+                    </label>
+                    <select
+                      value={newAuthorRole}
+                      onChange={(e) => setNewAuthorRole(e.target.value as UserRole)}
+                      className="w-full px-3 py-2 bg-white border border-[#E8E4DC] rounded text-[#0B241A] font-medium focus:outline-none focus:border-[#0B241A]"
+                    >
+                      <option value="Principal Steward">Principal Steward</option>
+                      <option value="Fiduciary Trustee">Fiduciary Trustee</option>
+                      <option value="Investment Committee Lead">Investment Committee Lead</option>
+                      <option value="Next-Gen Fellow">Next-Gen Fellow</option>
+                      <option value="Field Auditor">Field Auditor</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-[11px] font-mono uppercase text-[#78716C] mb-1">
+                    Qualitative Observation & Ecological Findings *
+                  </label>
+                  <textarea
+                    rows={3}
+                    value={newNote}
+                    onChange={(e) => setNewNote(e.target.value)}
+                    placeholder="Enter rigorous qualitative notes on soil microbiology, community governance dynamics, land tenure security, or local agency..."
+                    className="w-full px-3 py-2 bg-white border border-[#E8E4DC] rounded text-[#0B241A] text-xs leading-relaxed focus:outline-none focus:border-[#0B241A]"
+                    required
+                  />
+                </div>
+
+                <div className="flex items-center justify-end gap-3 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setIsAddingAnnotation(false)}
+                    className="px-3 py-1.5 text-xs text-[#57534E] hover:text-[#0B241A] cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-[#2C5E4B] text-white text-xs font-semibold rounded hover:bg-[#234b3c] transition-colors cursor-pointer"
+                  >
+                    Save & Attach Annotation
+                  </button>
+                </div>
+              </form>
+            )}
+
+            {/* List of Existing Annotations */}
+            {(!opportunity.annotations || opportunity.annotations.length === 0) ? (
+              <div className="p-4 bg-[#FBF9F5] border border-dashed border-[#E8E4DC] rounded-lg text-center text-xs text-[#78716C]">
+                No regenerative annotations attached yet. Use the button above to log the first qualitative field observation or community testimony.
+              </div>
+            ) : (
+              <div className="space-y-3">
+                {opportunity.annotations.map((ann) => (
+                  <div key={ann.id} className="p-4 bg-[#FBF9F5] border border-[#E8E4DC] rounded-lg space-y-2 text-xs">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <div className="flex items-center gap-2">
+                        <span className="px-2.5 py-0.5 bg-[#0B241A] text-[#FBF9F5] text-[10px] font-mono uppercase tracking-wider rounded font-medium">
+                          {ann.category}
+                        </span>
+                        <span className="px-2 py-0.5 bg-amber-100 text-amber-900 border border-amber-200 text-[10px] rounded font-medium">
+                          {ann.evidenceTier}
+                        </span>
+                      </div>
+                      <span className="text-[11px] font-mono text-[#78716C]">
+                        {ann.timestamp}
+                      </span>
+                    </div>
+
+                    <p className="text-xs sm:text-sm text-[#292524] leading-relaxed italic bg-white p-3 border border-[#E8E4DC] rounded">
+                      "{ann.note}"
+                    </p>
+
+                    <div className="flex items-center justify-between text-[11px] text-[#78716C] pt-1">
+                      <span>
+                        Recorded by: <strong className="text-[#0B241A]">{ann.authorName}</strong> ({ann.authorRole})
+                      </span>
+                      <span className="text-[#2C5E4B] font-mono font-medium">
+                        ✓ Integrity Signed
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Modal Footer Bar */}

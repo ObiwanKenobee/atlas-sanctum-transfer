@@ -8,6 +8,7 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     sector: 'Regenerative Agriculture',
     county: 'Nyeri & Kirinyaga Counties',
     country: 'Kenya',
+    coordinates: { lat: -0.4167, lng: 37.0667 },
     readiness: 'Growth / Expansion',
     capitalRequirementUsd: 2400000,
     minimumTicketUsd: 150000,
@@ -71,7 +72,39 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     ],
     localOwnershipPercentage: 64,
     communityParticipationModel: 'Farmer co-operative holds 40% equity stake in the central processing and export entity with two permanent board seats.',
-    status: 'Qualified'
+    status: 'Qualified',
+    annotations: [
+      {
+        id: 'ann-01-1',
+        opportunityId: 'opp-01',
+        category: 'Soil Restoration',
+        authorName: 'Dr. Wanjiku Mwangi',
+        authorRole: 'Field Auditor',
+        timestamp: '2026-02-14',
+        note: 'Microbial bio-inoculant tests show mycorrhizal colonization rates exceeding 78% in top 30cm soil layers across Kirinyaga demonstration plots, driving a 1.84% measured SOC increase.',
+        evidenceTier: 'Direct Field Observation'
+      },
+      {
+        id: 'ann-01-2',
+        opportunityId: 'opp-01',
+        category: 'Community Sovereignty',
+        authorName: 'Ochieng Family Council Lead',
+        authorRole: 'Principal Steward',
+        timestamp: '2026-03-02',
+        note: 'Farmer co-operative assembly holds supermajority veto on land-use zoning; no foreign equity holder can encumber freehold title or redirect community water springs.',
+        evidenceTier: 'Community Testimony'
+      },
+      {
+        id: 'ann-01-3',
+        opportunityId: 'opp-01',
+        category: 'Youth Employment & Continuity',
+        authorName: 'Grace Mutua',
+        authorRole: 'Next-Gen Fellow',
+        timestamp: '2026-03-28',
+        note: 'Agronomic drone telemetry apprentice program employs 34 university graduates from Kirinyaga, retaining generational talent within the regional watershed economy.',
+        evidenceTier: 'Audited Baseline Finding'
+      }
+    ]
   },
   {
     id: 'opp-02',
@@ -80,6 +113,7 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     sector: 'Watershed & Aquatic Systems',
     county: 'Homa Bay & Kisumu Counties',
     country: 'Kenya',
+    coordinates: { lat: -0.5273, lng: 34.4571 },
     readiness: 'Growth / Expansion',
     capitalRequirementUsd: 1800000,
     minimumTicketUsd: 100000,
@@ -134,7 +168,29 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     ],
     localOwnershipPercentage: 55,
     communityParticipationModel: 'Beach Management Units (BMUs) receive 5% gross landing fees earmarked for shoreline reforestation and community clinic fund.',
-    status: 'Qualified'
+    status: 'Qualified',
+    annotations: [
+      {
+        id: 'ann-02-1',
+        opportunityId: 'opp-02',
+        category: 'Aquifer & Watershed Protection',
+        authorName: 'Dr. Lucas Otieno',
+        authorRole: 'Field Auditor',
+        timestamp: '2026-02-20',
+        note: 'Benthic core sampling under the cages confirms benthic bio-layer maintains aerobic conditions with zero anoxic dead-zone formation.',
+        evidenceTier: 'Direct Field Observation'
+      },
+      {
+        id: 'ann-02-2',
+        opportunityId: 'opp-02',
+        category: 'Gender Equity & Land Agency',
+        authorName: 'Amina Odhiambo',
+        authorRole: 'Investment Committee Lead',
+        timestamp: '2026-03-12',
+        note: 'Eliminated "jaboya" sexual exploitation of women fishmongers by establishing transparent direct solar locker rental contracts registered directly in women cooperative members\' names.',
+        evidenceTier: 'Community Testimony'
+      }
+    ]
   },
   {
     id: 'opp-03',
@@ -143,6 +199,7 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     sector: 'Decentralized Clean Energy',
     county: 'Baringo & Nakuru Counties',
     country: 'Kenya',
+    coordinates: { lat: 0.4871, lng: 35.9667 },
     readiness: 'Institutional Scale',
     capitalRequirementUsd: 3800000,
     minimumTicketUsd: 250000,
@@ -192,7 +249,29 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     ],
     localOwnershipPercentage: 48,
     communityParticipationModel: 'Community development trust holds 15% carried equity in each mini-grid SPV.',
-    status: 'Qualified'
+    status: 'Qualified',
+    annotations: [
+      {
+        id: 'ann-03-1',
+        opportunityId: 'opp-03',
+        category: 'Clean Energy & Decentralization',
+        authorName: 'Eng. Kipkemoi Ruto',
+        authorRole: 'Field Auditor',
+        timestamp: '2026-01-18',
+        note: '100% solar uptime over 180 consecutive operating days observed across Baringo dairy chilling centers; zero diesel consumption recorded.',
+        evidenceTier: 'Direct Field Observation'
+      },
+      {
+        id: 'ann-03-2',
+        opportunityId: 'opp-03',
+        category: 'Youth Employment & Continuity',
+        authorName: 'Kiplagat Family Representative',
+        authorRole: 'Next-Gen Fellow',
+        timestamp: '2026-03-05',
+        note: 'Mini-grid productive hub has supported 42 young electrical technicians and micro-mill operators with technical TVET certifications.',
+        evidenceTier: 'Audited Baseline Finding'
+      }
+    ]
   },
   {
     id: 'opp-04',
@@ -201,6 +280,7 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     sector: 'Community Land & Forest Trusts',
     county: 'Murang’a & Embu Counties',
     country: 'Kenya',
+    coordinates: { lat: -0.7167, lng: 37.1500 },
     readiness: 'Seed Stage',
     capitalRequirementUsd: 1200000,
     minimumTicketUsd: 50000,
@@ -243,7 +323,29 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     ],
     localOwnershipPercentage: 80,
     communityParticipationModel: 'Governed by a tripartite board: 1/3 community watershed associations, 1/3 municipal water offtakers, 1/3 scientific trustees.',
-    status: 'Qualified'
+    status: 'Qualified',
+    annotations: [
+      {
+        id: 'ann-04-1',
+        opportunityId: 'opp-04',
+        category: 'Aquifer & Watershed Protection',
+        authorName: 'Dr. Lucas Otieno',
+        authorRole: 'Field Auditor',
+        timestamp: '2026-02-28',
+        note: '4,500 hectares of indigenous bamboo buffer has stabilized steep gradient slopes, preventing 140,000 tons of silt wash into Ndakaini reservoir.',
+        evidenceTier: 'Audited Baseline Finding'
+      },
+      {
+        id: 'ann-04-2',
+        opportunityId: 'opp-04',
+        category: 'Biodiversity Corridors',
+        authorName: 'Ecosystem Science Lead',
+        authorRole: 'Fiduciary Trustee',
+        timestamp: '2026-03-15',
+        note: 'Return of mountain bongo and crowned eagle nesting pairs documented by camera traps along the protected riparian corridor.',
+        evidenceTier: 'Direct Field Observation'
+      }
+    ]
   },
   {
     id: 'opp-05',
@@ -252,6 +354,7 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     sector: 'Circular Bioeconomy',
     county: 'Kajiado & Narok Counties',
     country: 'Kenya',
+    coordinates: { lat: -1.8500, lng: 36.7833 },
     readiness: 'Rejected / Ineligible',
     capitalRequirementUsd: 5000000,
     minimumTicketUsd: 500000,
@@ -296,7 +399,228 @@ export const INITIAL_OPPORTUNITIES: Opportunity[] = [
     localOwnershipPercentage: 5,
     communityParticipationModel: 'Purely extractive token distribution without voting rights or land governance authority.',
     status: 'Excluded',
-    exclusionReason: 'FAILED INTEGRITY GATE: Violates Atlas Sanctum Covenant on Human Flourishing and Just Institutions. Demonstrates speculative tokenization, predatory rangeland lock-in, absence of FPIC consent, and unverified carbon claims without soil ground-truthing.'
+    exclusionReason: 'FAILED INTEGRITY GATE: Violates Atlas Sanctum Covenant on Human Flourishing and Just Institutions. Demonstrates speculative tokenization, predatory rangeland lock-in, absence of FPIC consent, and unverified carbon claims without soil ground-truthing.',
+    annotations: [
+      {
+        id: 'ann-05-1',
+        opportunityId: 'opp-05',
+        category: 'Community Sovereignty',
+        authorName: 'Legal & FPIC Counsel',
+        authorRole: 'Fiduciary Trustee',
+        timestamp: '2026-01-10',
+        note: 'EXCLUSION AUDIT: Project promoters attempted to bypass Maasai Council of Elders customary assembly. Failed integrity gate on community sovereignty and lack of FPIC.',
+        evidenceTier: 'Community Testimony'
+      }
+    ]
+  },
+  {
+    id: 'opp-06',
+    name: 'Virunga Regenerative Agroforestry & Hydropower',
+    tagline: 'Run-of-river clean micro-hydro coupled with indigenous volcanic slope reforestation and specialty tea co-ops.',
+    sector: 'Decentralized Clean Energy',
+    county: 'Northern Province & Lake Kivu',
+    country: 'Rwanda',
+    coordinates: { lat: -1.6800, lng: 29.2600 },
+    readiness: 'Growth / Expansion',
+    capitalRequirementUsd: 3100000,
+    minimumTicketUsd: 200000,
+    instrument: 'Senior Debt',
+    projectedFinancialReturn: '8.8% USD senior secured',
+    rciScore: 86,
+    confidenceLevel: 'High (Verified & Audited)',
+    image: '/src/assets/images/kenya_regenerative_agriculture_1792231068950.jpg',
+    problemStatement: 'Severe slope destabilization and deforestation on volcanic hillsides around Lake Kivu cause soil erosion, while tea processing factories burn dirty eucalyptus firewood for thermal leaf withering.',
+    operatingModel: 'Operates a 2.4 MW run-of-river hydro cascade supplying base electricity to 4 cooperative tea factories, with a legally binding 15% revenue commitment dedicated to high-altitude indigenous buffer re-greening.',
+    additionality: 'Replaces 42,000 tons of wood consumption annually, stabilizing the riparian buffer along Lake Kivu while maintaining 100% smallholder co-op tea export quality certification.',
+    beneficiaryCount: 2200,
+    hectaresUnderRegeneration: 2100,
+    rciPillars: {
+      ecologicalRegeneration: 22,
+      institutionalGovernance: 24,
+      financialDurability: 21,
+      additionalityAndAgency: 19,
+    },
+    evidenceSources: [
+      {
+        title: 'Rwanda Utilities Regulatory Authority (RURA) PPA License',
+        authorOrOrg: 'RURA Rwanda',
+        date: 'February 2025',
+        type: 'Field Inspection',
+        verified: true,
+        notes: '20-year off-take agreement with national utility and private co-op factories.'
+      }
+    ],
+    unresolvedGaps: [
+      'Seasonal low-flow monitoring during dry season July–August needs 2nd-year hydrological confirmation.'
+    ],
+    keyRisks: [
+      {
+        category: 'Climate/Hydrological',
+        description: 'Severe flash siltation during peak torrential rain.',
+        mitigation: 'Desanding sediment channels and automated weir sluice gates.'
+      }
+    ],
+    localOwnershipPercentage: 51,
+    communityParticipationModel: 'Tea cooperatives hold 30% direct equity; community watershed council oversees ecological restoration.',
+    status: 'Qualified',
+    annotations: [
+      {
+        id: 'ann-06-1',
+        opportunityId: 'opp-06',
+        category: 'Biodiversity Corridors',
+        authorName: 'Jean-Paul Habimana',
+        authorRole: 'Field Auditor',
+        timestamp: '2026-02-11',
+        note: 'Volcanic slope reforestation buffer provides contiguous canopy connection into the Virunga National Park buffer zone, mitigating human-wildlife conflict.',
+        evidenceTier: 'Direct Field Observation'
+      }
+    ]
+  },
+  {
+    id: 'opp-07',
+    name: 'Kilombero River Basin Bioeconomy & Clean Biomass',
+    tagline: 'Circular bio-pellet conversion from rice milling waste, eliminating mangrove charcoal in urban coastal centers.',
+    sector: 'Circular Bioeconomy',
+    county: 'Morogoro Region',
+    country: 'Tanzania',
+    coordinates: { lat: -8.1500, lng: 36.6833 },
+    readiness: 'Growth / Expansion',
+    capitalRequirementUsd: 2100000,
+    minimumTicketUsd: 120000,
+    instrument: 'Revenue Share Note',
+    projectedFinancialReturn: '9.0% coupon + 1.8% gross volume royalty',
+    rciScore: 80,
+    confidenceLevel: 'High (Verified & Audited)',
+    image: '/src/assets/images/aquaculture_lake_victoria_1792231070593.jpg',
+    problemStatement: 'Over 80,000 metric tons of agricultural rice husk residue are dumped or burned in open fields annually across the Kilombero floodplain, releasing methane and particulates while urban centers consume illegally cut coastal mangrove charcoal.',
+    operatingModel: 'Transforms post-harvest rice husk waste into smokeless industrial bio-briquettes for tea factories and clean institutional cookstoves across Dar es Salaam, returning nutrient-rich biochar ash directly to smallholder paddy soil.',
+    additionality: 'Replaces 18,000 metric tons of mangrove and indigenous woodland charcoal every year, while creating an immediate 15% supplemental cash income for 1,100 smallholder rice farmers.',
+    beneficiaryCount: 1750,
+    hectaresUnderRegeneration: 1400,
+    rciPillars: {
+      ecologicalRegeneration: 21,
+      institutionalGovernance: 20,
+      financialDurability: 20,
+      additionalityAndAgency: 19,
+    },
+    evidenceSources: [
+      {
+        title: 'Industrial Calorific Testing and Bio-char Ash Heavy Metal Soil Safety Analysis',
+        authorOrOrg: 'Tanzania Industrial Research and Development Organization (TIRDO)',
+        date: 'May 2025',
+        type: 'Field Inspection',
+        verified: true,
+        notes: 'Passed ISO 17225-6 standards for solid biofuels and zero phytotoxicity.'
+      }
+    ],
+    unresolvedGaps: [
+      'Trucking logistics during the heavy monsoon rainy season (April-May) on unpaved feeder roads.'
+    ],
+    keyRisks: [
+      {
+        category: 'Operational',
+        description: 'Seasonal rice harvest volume fluctuations.',
+        mitigation: 'Off-season storage silos buffering 3 months of raw husk feedstock.'
+      }
+    ],
+    localOwnershipPercentage: 45,
+    communityParticipationModel: 'Rice outgrower associations hold a 20% equity stake in the pelleting company.',
+    status: 'Qualified',
+    annotations: [
+      {
+        id: 'ann-07-1',
+        opportunityId: 'opp-07',
+        category: 'Circular Waste Biomass',
+        authorName: 'Rashid Mwinyi',
+        authorRole: 'Field Auditor',
+        timestamp: '2026-03-01',
+        note: 'Industrial briquette press achieves 4,200 kcal/kg calorific value, displacing 1.2 metric tons of mangrove charcoal per ton of rice-husk pellet consumed in industrial kilns.',
+        evidenceTier: 'Audited Baseline Finding'
+      },
+      {
+        id: 'ann-07-2',
+        opportunityId: 'opp-07',
+        category: 'Soil Restoration',
+        authorName: 'Soil Science Lead',
+        authorRole: 'Investment Committee Lead',
+        timestamp: '2026-03-22',
+        note: 'Biochar ash residue returned to flooded paddy soils improved cation exchange capacity by 24% over single harvest season test trials.',
+        evidenceTier: 'Direct Field Observation'
+      }
+    ]
+  },
+  {
+    id: 'opp-08',
+    name: 'Volta Estuary Mangrove & Agro-Ecological Shea Trust',
+    tagline: 'Coastal mangrove blue carbon buffer and women-led savannah shea nut processing federation.',
+    sector: 'Community Land & Forest Trusts',
+    county: 'Volta Estuary & Northern Savannah',
+    country: 'Ghana',
+    coordinates: { lat: 5.7600, lng: 0.6300 },
+    readiness: 'Seed Stage',
+    capitalRequirementUsd: 1500000,
+    minimumTicketUsd: 75000,
+    instrument: 'Program-Related Grant',
+    projectedFinancialReturn: '3.5% concessionary community yield + certified organic shea export margin',
+    rciScore: 83,
+    confidenceLevel: 'High (Verified & Audited)',
+    image: '/src/assets/images/diaspora_stewardship_roundtable_1792231069117.jpg',
+    problemStatement: 'Rapid coastal erosion in the Volta delta combines with degradation of the northern savannah shea belt, pushing women agro-processors into subsistence poverty.',
+    operatingModel: 'Operates a twin-landscape regenerative covenant: restores 3,200 hectares of tidal mangrove wetlands in the south while funding clean solar-powered shea butter processing hubs in the northern savannah with direct European fair-trade offtake.',
+    additionality: 'Provides non-extractive patient capital and women co-operative ownership, preventing predatory land speculation along the delta while tripling smallholder processor net earnings.',
+    beneficiaryCount: 2800,
+    hectaresUnderRegeneration: 3200,
+    rciPillars: {
+      ecologicalRegeneration: 23,
+      institutionalGovernance: 22,
+      financialDurability: 18,
+      additionalityAndAgency: 20,
+    },
+    evidenceSources: [
+      {
+        title: 'Tidal Mangrove Bio-acoustic & Benthic Diversity Longitudinal Study',
+        authorOrOrg: 'University of Ghana Department of Marine and Fisheries Sciences',
+        date: 'July 2025',
+        type: 'Hydrological Sensor',
+        verified: true,
+        notes: 'Recorded 38% recovery in juvenile crab and estuary fish nursery populations.'
+      }
+    ],
+    unresolvedGaps: [
+      'Cold-chain transport from northern shea mills to Tema sea port during high heat periods.'
+    ],
+    keyRisks: [
+      {
+        category: 'Policy/Tenure',
+        description: 'Chieftaincy stool land boundary reconciliations along coastal lagoons.',
+        mitigation: 'Demarcated with traditional council customary treaties registered at the Lands Commission.'
+      }
+    ],
+    localOwnershipPercentage: 75,
+    communityParticipationModel: 'Women shea cooperatives and local lagoon fisherfolk associations jointly control 60% of the governance board.',
+    status: 'Qualified',
+    annotations: [
+      {
+        id: 'ann-08-1',
+        opportunityId: 'opp-08',
+        category: 'Gender Equity & Land Agency',
+        authorName: 'Abena Mensah',
+        authorRole: 'Principal Steward',
+        timestamp: '2026-02-18',
+        note: 'Women shea processors hold 60% of board seats and control communal storage facility escrow accounts, retaining 92% of export margins locally.',
+        evidenceTier: 'Community Testimony'
+      },
+      {
+        id: 'ann-08-2',
+        opportunityId: 'opp-08',
+        category: 'Community Sovereignty',
+        authorName: 'Traditional Council Liaison',
+        authorRole: 'Fiduciary Trustee',
+        timestamp: '2026-03-10',
+        note: 'Stool land customary covenants legally registered preventing commercial sand-winning and predatory tourism concessions along the estuary.',
+        evidenceTier: 'Audited Baseline Finding'
+      }
+    ]
   }
 ];
 
@@ -307,7 +631,7 @@ export const INITIAL_MANDATE: LegacyMandate = {
   timeHorizonYears: 15,
   primaryMission: 'Ecological Restoration & Food Sovereignty',
   philanthropicSplit: 25,
-  geographicFocus: 'Kenya Focus (Rift Valley & Highlands)',
+  geographicFocus: 'East Africa Regional (Kenya, Rwanda, Uganda)',
   ethicalExclusions: [
     'Extractive fossil fuel exploration',
     'Speculative blockchain carbon tokens',
